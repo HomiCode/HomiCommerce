@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from tortoise.contrib.fastapi import register_tortoise
 from models import *
 from authentication import get_hashed_password
@@ -8,6 +8,7 @@ from tortoise.signals import post_save
 from typing import List, Optional, Type
 from tortoise import BaseDBAsyncClient
 
+from fastapi.responses import HTMLResponse
 
 app = FastAPI()
 
